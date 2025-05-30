@@ -1,0 +1,23 @@
+services:
+  openssh:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openssh-server
+    hostname: openssh-server #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - PUBLIC_KEY="$$(cat /home/mario/.ssh/id_ed25519.pub)" #optional
+      - SUDO_ACCESS=false #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_PASSWORD=abcD1234 #optional
+      - USER_NAME=hsmuser #optional
+      - LOG_STDOUT= #optional
+    volumes:
+      - /path/to/openssh-server/config:/config
+    ports:
+      - 2222:2222
+    #command: tail -f /dev/null
+    restart: unless-stopped
