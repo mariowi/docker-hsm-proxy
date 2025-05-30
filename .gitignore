@@ -1,16 +1,18 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# Local work folder that is not checked in
+_LOCAL/
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+.shared
 
-# Book build output
-_book
+# Visual Studio Code
+/.vscode
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+# OSX
+.DS_Store
+
+# Vim
+*.swo
+*.swp
+
+# patch
+*.orig
+*.rej
